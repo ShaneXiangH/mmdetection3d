@@ -101,6 +101,10 @@ model = dict(
         loss_dir=dict(
             type='mmdet.CrossEntropyLoss', use_sigmoid=False,
             loss_weight=0.2)),
+    pts_fusion_layer = None,
+    img_roi_head = None,
+    img_rpn_head = None,
+
     # model training and testing settings
     train_cfg=dict(
         pts=dict(
@@ -138,7 +142,10 @@ model = dict(
             score_thr=0.1,
             min_bbox_size=0,
             nms_pre=100,
-            max_num=50)))
+            max_num=50)),
+    init_cfg = None)
+
+
 
 # dataset settings
 dataset_type = 'KittiDataset'
